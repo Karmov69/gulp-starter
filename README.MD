@@ -7,8 +7,8 @@
 
 ## Directory system
 ```
-ޓproject
-├─gulp
+ޓ project
+├─ޓ gulp
 │├─bower.js
 │├─build.js
 │├─clean.js
@@ -28,32 +28,32 @@
 │├─txt.js
 │├─watch.js
 │└─webserver.js
-├─dist
-├─src
-│├─fonts
-│├─img
-││├─favicon
+├─ޓ dist
+├─ޓ src
+│├─ޓ fonts
+│├─ޓ img
+││├─ޓ favicon
 │││└─favicon.png
-││├─pics
-││└─sprite
-│├─jade
-││├─components
+││├─ޓ pics
+││└─ޓ sprite
+│├─ޓ jade
+││├─ޓ components
 │││├─_footer.jade
 │││├─_head.jade
 │││├─_page-footer.jade
 │││└─_page-header.jade
-││├─mixins
+││├─ޓ mixins
 │││└─_svg.jade
-││├─templates
+││├─ޓ templates
 │││└─_layout.jade
 ││├─index.jade
 ││└─pages.jade
-│├─js
-││├─custom
+│├─ޓ js
+││├─ޓ custom
 │││└─scripts.js
-││└─vendor
-│├─less
-││├─blocks
+││└─ޓ vendor
+│├─ޓ less
+││├─ޓ blocks
 │││├─btn.less
 │││├─fonts.less
 │││├─normalize.less
@@ -63,14 +63,14 @@
 │││├─sprite-position.less
 │││├─type.less
 │││├─ui.less
-│││└─variables-custom.less -
-││├─mixins
+│││└─variables-custom.less
+││├─ޓ mixins
 │││├─sprites.less
 │││└─svg.less
-││├─vendor
+││├─ޓ vendor
 ││└─style.less
-│├─svg
-││└─sprite
+│├─ޓ svg
+││└─ޓ sprite
 │├─.htaccess
 │├─humans.txt
 │└─robots.txt
