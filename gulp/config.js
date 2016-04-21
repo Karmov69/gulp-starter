@@ -54,7 +54,7 @@ module.exports = {
 
 	// GitHub Pages options ex. git@github.com:vUdav/gulp-starter.git
 	ghpOptions: {
-		remoteUrl: ""
+		remoteUrl: ''
 	},
 
 	// Browser versions for automatically prefix
@@ -70,6 +70,14 @@ module.exports = {
 		injectChanges: true,
 		delay: 100,
 		logPrefix: "Project"
+	},
+
+	// ftp config
+	ftp: {
+		host: '151.248.112.209',
+		user: 'ftp_vudav',
+		pass: 'e8e1a66c48',
+		remotePath: '/dev/gulp-starter'
 	}
 
 };
