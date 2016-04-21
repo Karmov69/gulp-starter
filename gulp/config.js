@@ -74,10 +74,10 @@ module.exports = {
 
 	// ftp config
 	ftp: {
-		host: '151.248.112.209',
-		user: 'ftp_vudav',
-		pass: 'e8e1a66c48',
-		remotePath: '/dev/gulp-starter'
+		host: '',
+		user: '',
+		pass: '',
+		remotePath: ''
 	}
 
 };
