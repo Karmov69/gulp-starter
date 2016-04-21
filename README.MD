@@ -5,7 +5,7 @@
 * Bower
 * SVG
 
-## Directory system
+## File system
 ```
 ޓ project
 ├─ޓ gulp
@@ -100,7 +100,7 @@
 1. Go to `gulp/config.js`
 2. Edit `ghpOptions.remoteUrl`, ex. `'git@github.com:vUdav/gulp-starter.git'`
 3. Do command `gulp gh-pages`
-4. Go to url (http://USERNAME.github.io/PROJECTNAME/)[http://USERNAME.github.io/PROJECTNAME/]
+4. Go to url http://USERNAME.github.io/PROJECTNAME/
 
 ## Use FTP upload
 1. Go to `gulp/config.js`
