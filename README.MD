@@ -8,6 +8,7 @@
 ## File system
 ```
 ޓ project
+├─ޓ design
 ├─ޓ gulp
 │├─bower.js
 │├─build.js
