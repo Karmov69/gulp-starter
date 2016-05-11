@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+		config = require('./config'),
 		realFavicon = require ('gulp-real-favicon'),
 		fs = require('fs');
 
