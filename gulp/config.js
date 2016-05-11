@@ -1,5 +1,5 @@
 module.exports = {
-	projecctName: 'Project',
+	projectName: 'Project',
 
 	// Path settings
 	pathTo: {

@@ -19,20 +19,20 @@ gulp.task('generate-favicon', function(done) {
 				pictureAspect: 'backgroundAndMargin',
 				backgroundColor: '#ffffff',
 				margin: '28%',
-				appName: config.projecctName
+				appName: config.projectName
 			},
 			desktopBrowser: {},
 			windows: {
 				pictureAspect: 'whiteSilhouette',
 				backgroundColor: '#25262a',
 				onConflict: 'override',
-				appName: config.projecctName
+				appName: config.projectName
 			},
 			androidChrome: {
 				pictureAspect: 'shadow',
 				themeColor: '#f3f3f3',
 				manifest: {
-					name: config.projecctName,
+					name: config.projectName,
 					display: 'browser',
 					orientation: 'notSet',
 					onConflict: 'override',
