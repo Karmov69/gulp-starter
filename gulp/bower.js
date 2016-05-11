@@ -10,34 +10,41 @@ var gulp = require('gulp'),
 		rename = require('gulp-rename'),
 		browserSync = require("browser-sync"),
 		reload = browserSync.reload,
+		del = require('del'),
 		plumber = require('gulp-plumber');
 
-
-
 gulp.task('bower', function () {
-	var jsFilter = gulpFilter(['**/*.js'], {restore: true}),
-			cssFilter = gulpFilter(['**/*.{css,less}'], {restore: true});
+		del('src/js/vendor/**/*.*');
 
-	return gulp.src(mainBowerFiles({
-			includeDev: true
-	}))
-	.pipe(plumber(function(error) {
-			gutil.log(gutil.colors.red(error.message));
-			this.emit('end');
-	}))
-	// Get vendor JavaScript
-	.pipe(jsFilter)
-	.pipe(sourcemaps.init())
-	.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
-	.pipe(concat('vendor-bundle.js'))
-	.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
-	.pipe(rename({ suffix: '.min' }))
-	.pipe(uglify())
-	.pipe(sourcemaps.write('./'))
-	.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
-	.pipe(jsFilter.restore)
-	// Get vendor CSS
-	.pipe(cssFilter)
-	.pipe(gulp.dest(config.pathTo.Src.CSSVendor))
-	.pipe(reload({stream: true}));
+		var jsFilter = gulpFilter(['**/*.js','!jquery.js'], {restore: true}),
+				jsFilterJQ = gulpFilter(['jquery.js'], {restore: true}),
+				cssFilter = gulpFilter(['**/*.{css,less}'], {restore: true});
+
+		return gulp.src(mainBowerFiles({
+				includeDev: true
+		}))
+				.pipe(plumber(function(error) {
+						gutil.log(gutil.colors.red(error.message));
+						this.emit('end');
+				}))
+				// Get vendor JavaScript
+				.pipe(jsFilter)
+				// .pipe(sourcemaps.init())
+				.pipe(concat('vendor-bundle.js'))
+				.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
+				.pipe(rename({ suffix: '.min' }))
+				.pipe(uglify())
+				// .pipe(sourcemaps.write('./'))
+				.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
+				.pipe(jsFilter.restore)
+				// jQuery
+				.pipe(jsFilterJQ)
+				.pipe(uglify())
+				.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
+				.pipe(jsFilterJQ.restore)
+				// Get vendor CSS
+				.pipe(cssFilter)
+				.pipe(gulp.dest(config.pathTo.Src.CSSVendor))
+				.pipe(cssFilter.restore)
+				.pipe(reload({stream: true}));
 });
