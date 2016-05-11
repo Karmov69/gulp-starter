@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "ProjectName",
+  "description": "ProjectDesc",
   "main": "gulpfile.js",
   "authors": [
     "Valery Liubimov <v.udav@bk.ru>"
