@@ -20,6 +20,7 @@
     "gulp-imagemin": "latest",
     "gulp-jade": "latest",
     "gulp-jshint": "latest",
+    "jshint": "latest",
     "gulp-less": "latest",
     "gulp-load-plugins": "latest",
     "gulp-newer": "latest",
