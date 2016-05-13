@@ -13,11 +13,11 @@ var gulp = require('gulp'),
 		del = require('del'),
 		plumber = require('gulp-plumber');
 
-gulp.task('bower', function () {
-		del('src/js/vendor/**/*.*');
+gulp.task('bower-other', function () {
+		del('src/js/vendor');
 
-		var jsFilter = gulpFilter(['**/*.js','!jquery.js'], {restore: true}),
-				jsFilterJQ = gulpFilter(['jquery.js'], {restore: true}),
+		var jsFilter = gulpFilter(['bower_components/**/*.js','!bower_components/**/jquery.js'], {restore: true}),
+				jsFilterJQ = gulpFilter(['bower_components/**/jquery.js'], {restore: true}),
 				cssFilter = gulpFilter(['**/*.{css,less}'], {restore: true});
 
 		return gulp.src(mainBowerFiles({
@@ -30,6 +30,7 @@ gulp.task('bower', function () {
 				// Get vendor JavaScript
 				.pipe(jsFilter)
 				// .pipe(sourcemaps.init())
+				// .pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
 				.pipe(concat('vendor-bundle.js'))
 				.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
 				.pipe(rename({ suffix: '.min' }))
@@ -48,3 +49,15 @@ gulp.task('bower', function () {
 				.pipe(cssFilter.restore)
 				.pipe(reload({stream: true}));
 });
+
+gulp.task('bower-bootstrap', function(){
+	// var jsFilterBS = gulpFilter(["bower_components/bootstrap/**/modal.js"], {restore: true});
+
+	// return gulp.src('bower_components/**/*.js')
+	// 	// Bootstrap JS
+	// 	.pipe(jsFilterBS)
+	// 	.pipe(gulp.dest(config.pathTo.Src.BowerJSCustom))
+	// 	.pipe(jsFilterBS.restore)
+});
+
+gulp.task('bower',['bower-other','bower-bootstrap'])
