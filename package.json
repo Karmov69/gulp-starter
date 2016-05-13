@@ -40,7 +40,8 @@
     "jshint-stylish": "latest",
     "main-bower-files": "latest",
     "require-dir": "latest",
-    "run-sequence": "latest"
+    "run-sequence": "latest",
+    "vinyl-buffer": "latest"
   },
   "scripts": {},
   "repository": {},

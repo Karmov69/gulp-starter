@@ -4,6 +4,7 @@ var gulp = require('gulp'),
 		imagemin = require('gulp-imagemin'),
 		pngquant = require('imagemin-pngquant'),
 		spritesmith = require('gulp.spritesmith'),
+		buffer = require('vinyl-buffer'),
 		gutil = require('gulp-util'),
 		browserSync = require("browser-sync"),
 		reload = browserSync.reload,
@@ -28,6 +29,7 @@ gulp.task('png-sprite', function () {
 				gutil.log(gutil.colors.red(error.message));
 				this.emit('end');
 			}))
+			.pipe(buffer())
 			.pipe(imagemin({
 				progressive: true,
 				optimizationLevel: 5,
