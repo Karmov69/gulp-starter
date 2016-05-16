@@ -7,13 +7,14 @@ module.exports = {
 			Styles: 'src/less/**/*.less',
 			MainStyleFile: 'src/less/style.less',
 			Jade: 'src/jade/**/[^_]*.jade',
-			Images: ['src/img/**/*.*', '!src/img/sprite/*.*'],
+			Images: ['src/img/**/*.*', '!src/img/sprite/*.*', '!src/img/favicon/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
 			GHPages: 'dist/**/*',
 			JS: 'src/js/**/*.*',
-			JSVendor: 'vendor/**/*.*',
+			JSVendor: 'src/js/vendor/**/*.js',
 			BowerJSVendor: 'src/js/vendor/',
-			JSCustom: ['custom/**/*.js'],
+			BowerJSCustom: 'src/js/custom/',
+			JSCustom: 'src/js/custom/**/*.js',
 			CSSVendor: 'src/less/vendor/',
 			Txt: ['src/humans.txt', 'src/robots.txt', 'src/.htaccess'],
 			Fonts: 'src/fonts/**/*',
@@ -50,6 +51,7 @@ module.exports = {
 			Fonts: 'src/fonts/**/*',
 			Favicon: 'src/img/favicon/favicon.png'
 		}
+	},
 	},
 
 	// GitHub Pages options ex. git@github.com:vUdav/gulp-starter.git
