@@ -20,14 +20,14 @@ gulp.task('less', function () {
 			this.emit('end');
 		}))
 		.pipe(newer(config.pathTo.Build.Styles))
-		.pipe(sourcemaps.init())
+		// .pipe(sourcemaps.init())
 		.pipe(less())
 		.pipe(autoprefixer(config.autoprefixerBrowsers))
-		.pipe(cssnano())
 		.pipe(csscomb())
 		.pipe(gulp.dest(config.pathTo.Build.Styles))
+		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(sourcemaps.write('.'))
+		// .pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(config.pathTo.Build.Styles))
 		.pipe(reload({stream: true}));
 });
