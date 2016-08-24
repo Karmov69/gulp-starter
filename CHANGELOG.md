@@ -1,5 +1,14 @@
+# 0.3
+* Clear faviconData.json file
+* Change bower build config
+* Change JS build config
+* Change LESS build config
+* Move head.jade and footer.jade to templates folder
+* Change include JS and CSS files to template. Now for each pages his CSS and JS file.
+* Change JS structure app
+
 # 0.2
-Add FTP gulp plugin.
+* Add FTP gulp plugin.
 
 # 0.1
-Start! Based on (AstraMediaGroup Web Starter Kit)[https://github.com/Enkil/amg-webstarter-kit]
+* Start! Based on (AstraMediaGroup Web Starter Kit)[https://github.com/Enkil/amg-webstarter-kit]

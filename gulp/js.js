@@ -4,7 +4,6 @@ var gulp = require('gulp'),
 		jshint = require('gulp-jshint'),
 		stylish = require('jshint-stylish'),
 		uglify = require('gulp-uglify'),
-		sourcemaps = require('gulp-sourcemaps'),
 		newer = require('gulp-newer'),
 		gulpFilter = require('gulp-filter'),
 		concat = require('gulp-concat'),
@@ -12,11 +11,12 @@ var gulp = require('gulp'),
 		rename = require('gulp-rename'),
 		browserSync = require("browser-sync"),
 		reload = browserSync.reload,
-		plumber = require('gulp-plumber');
+		plumber = require('gulp-plumber'),
+		rigger = require('gulp-rigger'),
+		flatten = require('gulp-flatten');
 
 gulp.task('js', function () {
-	var customJS = gulpFilter(config.pathTo.Src.JSCustom, {restore: true}),
-			vendorJS = gulpFilter(config.pathTo.Src.JSVendor, {restore: true});
+	var customJS = gulpFilter(config.pathTo.Src.JSCustom, {restore: true});
 
 	return gulp.src(config.pathTo.Src.JS)
 		.pipe(plumber(function(error) {
@@ -25,20 +25,13 @@ gulp.task('js', function () {
 		}))
 		// Get custom JS
 		.pipe(customJS)
-		.pipe(sourcemaps.init())
+		.pipe(rigger())
 		.pipe(jshint())
 		.pipe(jshint.reporter(stylish))
-		.pipe(gulp.dest(config.pathTo.Build.JSCustom))
-		.pipe(concat('custom-bundle.js'))
-		.pipe(gulp.dest(config.pathTo.Build.JSCustom))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(config.pathTo.Build.JSCustom))
+		.pipe(flatten())
+		.pipe(gulp.dest(config.pathTo.Build.JS))
 		.pipe(customJS.restore)
-		// Get vendor JS
-		.pipe(vendorJS)
-		.pipe(newer(config.pathTo.Build.JSVendor))
-		.pipe(gulp.dest(config.pathTo.Build.JSVendor))
 		.pipe(reload({stream: true}));
 });

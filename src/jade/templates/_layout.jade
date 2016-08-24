@@ -3,14 +3,16 @@ include ../mixins/_svg
 doctype
 html(lang="ru")
 
-	include ../components/_head
+	block vars
+
+	include _head
 
 	body
 		include ../components/_page-header
 
-		main.main
+		main.main(id='#{page}')
 			block content
 
 		include ../components/_page-footer
 
-include ../components/_footer
+include _footer

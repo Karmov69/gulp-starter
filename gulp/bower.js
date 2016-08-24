@@ -2,62 +2,34 @@
 var gulp = require('gulp'),
 		config = require('./config'),
 		uglify = require('gulp-uglify'),
-		sourcemaps = require('gulp-sourcemaps'),
-		gulpFilter = require('gulp-filter'),
 		concat = require('gulp-concat'),
 		gutil = require('gulp-util'),
-		mainBowerFiles = require('main-bower-files'),
 		rename = require('gulp-rename'),
-		browserSync = require("browser-sync"),
-		reload = browserSync.reload,
-		del = require('del'),
-		plumber = require('gulp-plumber');
+		plumber = require('gulp-plumber'),
+		del = require('del');
 
-gulp.task('bower-other', function () {
-		del('src/js/vendor');
+gulp.task('bower-concatjs', function(){
+	del(config.pathTo.Src.BowerJSVendor);
 
-		var jsFilter = gulpFilter(['bower_components/**/*.js','!bower_components/**/jquery.js'], {restore: true}),
-				jsFilterJQ = gulpFilter(['bower_components/**/jquery.js'], {restore: true}),
-				cssFilter = gulpFilter(['**/*.{css,less}'], {restore: true});
-
-		return gulp.src(mainBowerFiles({
-				includeDev: true
+	return gulp.src(config.bower.concatJS)
+		.pipe(plumber(function(error) {
+			gutil.log(gutil.colors.red(error.message));
+			this.emit('end');
 		}))
-				.pipe(plumber(function(error) {
-						gutil.log(gutil.colors.red(error.message));
-						this.emit('end');
-				}))
-				// Get vendor JavaScript
-				.pipe(jsFilter)
-				// .pipe(sourcemaps.init())
-				// .pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
-				.pipe(concat('vendor-bundle.js'))
-				.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
-				.pipe(rename({ suffix: '.min' }))
-				.pipe(uglify())
-				// .pipe(sourcemaps.write('./'))
-				.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
-				.pipe(jsFilter.restore)
-				// jQuery
-				.pipe(jsFilterJQ)
-				.pipe(uglify())
-				.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
-				.pipe(jsFilterJQ.restore)
-				// Get vendor CSS
-				.pipe(cssFilter)
-				.pipe(gulp.dest(config.pathTo.Src.CSSVendor))
-				.pipe(cssFilter.restore)
-				.pipe(reload({stream: true}));
+		.pipe(concat('libs.js'))
+		.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor))
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(uglify())
+		.pipe(gulp.dest(config.pathTo.Build.JS));
 });
 
-gulp.task('bower-bootstrap', function(){
-	// var jsFilterBS = gulpFilter(["bower_components/bootstrap/**/modal.js"], {restore: true});
-
-	// return gulp.src('bower_components/**/*.js')
-	// 	// Bootstrap JS
-	// 	.pipe(jsFilterBS)
-	// 	.pipe(gulp.dest(config.pathTo.Src.BowerJSCustom))
-	// 	.pipe(jsFilterBS.restore)
+gulp.task('bower-vendorjs', function(){
+	return gulp.src(config.bower.vendorJS)
+		.pipe(plumber(function(error) {
+			gutil.log(gutil.colors.red(error.message));
+			this.emit('end');
+		}))
+		.pipe(gulp.dest(config.pathTo.Src.BowerJSVendor));
 });
 
-gulp.task('bower',['bower-other','bower-bootstrap'])
+gulp.task('bower', ['bower-concatjs','bower-vendorjs']);

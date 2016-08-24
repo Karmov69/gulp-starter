@@ -1,17 +1,15 @@
 module.exports = {
-	projectName: 'Project',
+	projectName: 'asatrans',
 
 	// Path settings
 	pathTo: {
 		Src: {
-			Styles: 'src/less/**/*.less',
-			MainStyleFile: 'src/less/style.less',
+			Styles: 'src/less/[^_]*.{less,css}',
 			Jade: 'src/jade/**/[^_]*.jade',
 			Images: ['src/img/**/*.*', '!src/img/sprite/*.*', '!src/img/favicon/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
 			GHPages: 'dist/**/*',
-			JS: 'src/js/**/*.*',
-			JSVendor: 'src/js/vendor/**/*.js',
+			JS: 'src/js/**/[^_]*.*',
 			BowerJSVendor: 'src/js/vendor/',
 			BowerJSCustom: 'src/js/custom/',
 			JSCustom: 'src/js/custom/**/*.js',
@@ -29,8 +27,7 @@ module.exports = {
 			Images: 'dist/img',
 			PngSprite: 'dist/img',
 			PngSpriteCSS: 'src/less/blocks',
-			JSVendor: 'dist/js',
-			JSCustom: 'dist/js/custom',
+			JS: 'dist/js',
 			Txt: 'dist/',
 			Clean: ['dist/**/*', '!dist/.gitignore'],
 			Fonts: 'dist/fonts',
@@ -41,7 +38,7 @@ module.exports = {
 			FaviconInject: 'dist/*.html'
 		},
 		Watch: {
-			Styles: 'src/less/**/*.less',
+			Styles: 'src/less/**/*.{less,css}',
 			Jade: 'src/jade/**/*.jade',
 			Images: ['src/img/**/*.*', '!src/img/sprite/*.*', '!src/img/favicon/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
@@ -52,6 +49,13 @@ module.exports = {
 			Favicon: 'src/img/favicon/favicon.png'
 		}
 	},
+
+	// Bower components list
+	bower: {
+		concatJS: [
+			'bower_components/jquery/dist/jquery.js'
+		],
+		vendorJS: []
 	},
 
 	// GitHub Pages options ex. git@github.com:vUdav/gulp-starter.git
@@ -71,7 +75,7 @@ module.exports = {
 		port: 9000,
 		injectChanges: true,
 		delay: 100,
-		logPrefix: "Project"
+		logPrefix: 'projectname'
 	},
 
 	// ftp config
