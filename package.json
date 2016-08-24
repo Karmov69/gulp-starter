@@ -14,6 +14,7 @@
     "gulp-csscomb": "latest",
     "gulp-cssnano": "latest",
     "gulp-exit": "latest",
+    "gulp-filter": "latest",
     "gulp-flatten": "latest",
     "gulp-ftp": "latest",
     "gulp-gh-pages": "latest",
