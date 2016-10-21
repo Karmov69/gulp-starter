@@ -3,7 +3,6 @@ var gulp = require('gulp'),
 		config = require('./config'),
 		less = require('gulp-less'),
 		cssnano = require('gulp-cssnano'),
-		csscomb = require('gulp-csscomb'),
 		autoprefixer = require('gulp-autoprefixer'),
 		newer = require('gulp-newer'),
 		gutil = require('gulp-util'),
@@ -21,7 +20,6 @@ gulp.task('less', function () {
 		.pipe(newer(config.pathTo.Build.Styles))
 		.pipe(less())
 		.pipe(autoprefixer(config.autoprefixerBrowsers))
-		.pipe(csscomb())
 		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(config.pathTo.Build.Styles))

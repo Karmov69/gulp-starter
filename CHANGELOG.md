@@ -1,3 +1,6 @@
+# 0.4
+* Delete csscomb
+
 # 0.3
 * Clear faviconData.json file
 * Change bower build config

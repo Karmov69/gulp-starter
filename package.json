@@ -11,7 +11,6 @@
     "gulp-autoprefixer": "latest",
     "gulp-cheerio": "latest",
     "gulp-concat": "latest",
-    "gulp-csscomb": "latest",
     "gulp-cssnano": "latest",
     "gulp-exit": "latest",
     "gulp-filter": "latest",
