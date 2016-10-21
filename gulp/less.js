@@ -20,7 +20,7 @@ gulp.task('less', function () {
 		.pipe(newer(config.pathTo.Build.Styles))
 		.pipe(less())
 		.pipe(autoprefixer(config.autoprefixerBrowsers))
-		.pipe(cssnano())
+		.pipe(cssnano({ minifyFontValues: false, discardUnused: false }))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest(config.pathTo.Build.Styles))
 		.pipe(reload({stream: true}));
