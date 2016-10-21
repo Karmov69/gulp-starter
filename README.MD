@@ -89,12 +89,19 @@
 
 ## Getting started
 1. Clone repo `git clone git@github.com:vUdav/gulp-starter.git my-project` on your `devevelop` directory
-2. Change project repo config `git remote set-url origin https://github.com/user/repo.git`
-3. Go to project folder `cd my-project`
-4. Install NPM dependencies `npm i`
-5. Install Bower dependencies `bower i`
-6. Build project `gulp build`
-7. Start local server `gulp`
+2. Go to project folder `cd my-project`
+3. Change project repo config `git remote set-url origin https://github.com/user/repo.git`
+4. Clear `TODO`
+5. Change `name` on `package.json`
+6. Clear, change or delete CHANGELOG.md
+7. Clear, change or delete `README.MD`
+8. Change `name` and `description` on `bower.json`
+9. Settings `gulp/config.js`
+10. Settings `gulp/build.js`
+11. Install NPM dependencies `npm i`
+12. Install Bower dependencies `bower i`
+13. Build project `gulp build`
+14. Start local server `gulp`
 
 ## Use GitHub pages
 1. Go to `gulp/config.js`

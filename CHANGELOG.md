@@ -2,6 +2,7 @@
 * Delete csscomb
 * Fix cssnano: @font-family minify bugs
 * Fix projectName variables
+* Edit `Getting started` on `README.MD`
 
 # 0.3
 * Clear faviconData.json file
