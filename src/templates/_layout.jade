@@ -1,0 +1,23 @@
+include ../mixins/_svg
+
+doctype
+html(lang="ru")
+
+	block vars
+
+	include _head
+
+	body
+		- var absoluteClass = (absoluteHeader ? 'body--absolute-header' : '')
+		.body.js-body(class=absoluteClass)
+			.body__wrapper
+				.header
+					include ../components/_page-header
+					include ../components/_menu
+
+				main.main(id='#{page}')
+					block content
+
+				include ../components/_page-footer
+
+	include _footer

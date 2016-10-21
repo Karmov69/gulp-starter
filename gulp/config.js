@@ -16,7 +16,8 @@ module.exports = {
 			Fonts: 'src/fonts/**/*',
 			Svg: ['src/svg/**/*.*', '!src/svg/sprite/*.*'],
 			SvgSprite: 'src/svg/sprite/**/*.svg',
-			Favicon: 'src/img/favicon/favicon.png'
+			Favicon: 'src/img/favicon/favicon.png',
+			PagesList: 'src/jade/pages.jade'
 		},
 		Build: {
 			Styles: 'dist/css',
@@ -45,6 +46,18 @@ module.exports = {
 			JS: 'src/js/**/*.*',
 			Fonts: 'src/fonts/**/*',
 			Favicon: 'src/img/favicon/favicon.png'
+		},
+		Templates: {
+			Page: {
+				Jade: 'src/templates/page.jade',
+				Less: 'src/templates/page.less',
+				Js: 'src/templates/page.js'
+			},
+			Dest: {
+				Jade: 'src/jade',
+				Less: 'src/less',
+				Js: 'src/js/custom/'
+			}
 		}
 	},
 
