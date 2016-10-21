@@ -41,7 +41,9 @@
     "jshint-stylish": "latest",
     "require-dir": "latest",
     "run-sequence": "latest",
-    "vinyl-buffer": "latest"
+    "vinyl-buffer": "latest",
+    "gulp-inject-string": "latest",
+    "gulp-template": "latest"
   },
   "scripts": {},
   "repository": {},

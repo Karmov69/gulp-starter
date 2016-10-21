@@ -103,6 +103,9 @@
 13. Build project `gulp build`
 14. Start local server `gulp`
 
+## Create new page
+Write on console `gulp new-page --page your-some-page --title your-some-title` or `gulp new-page` for default settings.
+
 ## Use GitHub pages
 1. Go to `gulp/config.js`
 2. Edit `ghpOptions.remoteUrl`, ex. `'git@github.com:vUdav/gulp-starter.git'`
