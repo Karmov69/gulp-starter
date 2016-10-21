@@ -1,6 +1,7 @@
 # 0.4
 * Delete csscomb
 * Fix cssnano: @font-family minify bugs
+* Fix projectName variables
 
 # 0.3
 * Clear faviconData.json file

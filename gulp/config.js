@@ -1,6 +1,4 @@
 module.exports = {
-	projectName: 'asatrans',
-
 	// Path settings
 	pathTo: {
 		Src: {

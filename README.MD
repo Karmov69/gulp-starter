@@ -78,7 +78,6 @@
 ├─.editorconfig
 ├─.gitattributes
 ├─.gitignore
-├─.csscomb.json
 ├─gulpfile.js
 ├─bower.json
 ├─faviconData.json
