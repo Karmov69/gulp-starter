@@ -4,6 +4,7 @@
 * Fix projectName variables
 * Edit `Getting started` on `README.MD`
 * Add new-page function (read README)
+* Fix footer on layout
 
 # 0.3
 * Clear faviconData.json file
