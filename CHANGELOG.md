@@ -2,6 +2,7 @@
 * Fix templates for create page
 * Delete index default page
 * Remove bower task (now include scripts on js file)
+* Change favicon generate setting
 
 # 0.4
 * Delete csscomb

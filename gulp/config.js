@@ -57,6 +57,12 @@ module.exports = {
 		}
 	},
 
+	faviconSettings: {
+		appName: 'Kapous',
+		iconColor: '#000000',
+		bgColor: '#ffffff'
+	},
+
 	// GitHub Pages options ex. git@github.com:vUdav/gulp-starter.git
 	ghpOptions: {
 		remoteUrl: ''

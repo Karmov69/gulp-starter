@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
 		config = require('./config'),
 		realFavicon = require ('gulp-real-favicon'),
-		fs = require('fs');
+		fs = require('fs')
+		runSequence = require('run-sequence').use(gulp);
 
 // File where the favicon markups are stored
 var FAVICON_DATA_FILE = 'faviconData.json';
@@ -18,22 +19,22 @@ gulp.task('generate-favicon', function(done) {
 		design: {
 			ios: {
 				pictureAspect: 'backgroundAndMargin',
-				backgroundColor: '#ffffff',
-				margin: '28%',
-				appName: config.projectName
+				backgroundColor: config.faviconSettings.bgColor,
+				margin: '30%',
+				appName: config.faviconSettings.appName
 			},
 			desktopBrowser: {},
 			windows: {
 				pictureAspect: 'whiteSilhouette',
-				backgroundColor: '#25262a',
+				backgroundColor: config.faviconSettings.iconColor,
 				onConflict: 'override',
-				appName: config.projectName
+				appName: config.faviconSettings.appName
 			},
 			androidChrome: {
 				pictureAspect: 'shadow',
-				themeColor: '#f3f3f3',
+				themeColor: config.faviconSettings.bgColor,
 				manifest: {
-					name: config.projectName,
+					name: config.faviconSettings.appName,
 					display: 'browser',
 					orientation: 'notSet',
 					onConflict: 'override',
@@ -42,7 +43,7 @@ gulp.task('generate-favicon', function(done) {
 			},
 			safariPinnedTab: {
 				pictureAspect: 'silhouette',
-				themeColor: '#5bbad5'
+				themeColor: config.faviconSettings.iconColor
 			}
 		},
 		settings: {
@@ -76,4 +77,11 @@ gulp.task('check-for-favicon-update', function(done) {
 			throw err;
 		}
 	});
+});
+
+gulp.task('favicon', function(callback) {
+	runSequence(
+		'generate-favicon',
+		'inject-favicon-markups',
+		callback)
 });

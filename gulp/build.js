@@ -5,6 +5,7 @@ var gulp = require('gulp'),
 gulp.task('build', function(callback) {
 	runSequence(
 		'clean',
+		'js',
 		'png-sprite',
 		'images',
 		'svg',
@@ -13,9 +14,7 @@ gulp.task('build', function(callback) {
 		'less',
 		'txt',
 		'jade',
-		'generate-favicon',
-		'inject-favicon-markups',
+		'favicon',
 		'gh-pages',
-		'js',
 		callback)
 });
