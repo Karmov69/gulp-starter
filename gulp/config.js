@@ -52,7 +52,7 @@ module.exports = {
 			Dest: {
 				Jade: 'src/jade',
 				Less: 'src/less',
-				Js: 'src/js/custom/'
+				Js: 'src/js'
 			}
 		}
 	},
