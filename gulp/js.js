@@ -30,6 +30,5 @@ gulp.task('js', function () {
 		.pipe(uglify())
 		.pipe(flatten())
 		.pipe(gulp.dest(config.pathTo.Build.JS))
-		.pipe(customJS.restore)
 		.pipe(reload({stream: true}));
 });
