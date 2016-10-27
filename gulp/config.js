@@ -7,11 +7,7 @@ module.exports = {
 			Images: ['src/img/**/*.*', '!src/img/sprite/*.*', '!src/img/favicon/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
 			GHPages: 'dist/**/*',
-			JS: 'src/js/**/[^_]*.*',
-			BowerJSVendor: 'src/js/vendor/',
-			BowerJSCustom: 'src/js/custom/',
-			JSCustom: 'src/js/custom/**/*.js',
-			CSSVendor: 'src/less/vendor/',
+			JS: 'src/js/**/*.*',
 			Txt: ['src/humans.txt', 'src/robots.txt', 'src/.htaccess'],
 			Fonts: 'src/fonts/**/*',
 			Svg: ['src/svg/**/*.*', '!src/svg/sprite/*.*'],
@@ -59,14 +55,6 @@ module.exports = {
 				Js: 'src/js/custom/'
 			}
 		}
-	},
-
-	// Bower components list
-	bower: {
-		concatJS: [
-			'bower_components/jquery/dist/jquery.js'
-		],
-		vendorJS: []
 	},
 
 	// GitHub Pages options ex. git@github.com:vUdav/gulp-starter.git

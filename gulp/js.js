@@ -16,7 +16,6 @@ var gulp = require('gulp'),
 		flatten = require('gulp-flatten');
 
 gulp.task('js', function () {
-	var customJS = gulpFilter(config.pathTo.Src.JSCustom, {restore: true});
 
 	return gulp.src(config.pathTo.Src.JS)
 		.pipe(plumber(function(error) {
@@ -24,10 +23,9 @@ gulp.task('js', function () {
 			this.emit('end');
 		}))
 		// Get custom JS
-		.pipe(customJS)
 		.pipe(rigger())
 		.pipe(jshint())
-		.pipe(jshint.reporter(stylish))
+		// .pipe(jshint.reporter(stylish))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(flatten())

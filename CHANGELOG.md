@@ -1,3 +1,8 @@
+# 0.5
+* Fix templates for create page
+* Delete index default page
+* Remove bower task (now include scripts on js file)
+
 # 0.4
 * Delete csscomb
 * Fix cssnano: @font-family minify bugs
