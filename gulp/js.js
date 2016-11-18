@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 		jshint = require('gulp-jshint'),
 		stylish = require('jshint-stylish'),
 		uglify = require('gulp-uglify'),
-		changedInPlace = require('gulp-changed-in-place'),
+		cached = require('gulp-cached'),
 		gulpFilter = require('gulp-filter'),
 		concat = require('gulp-concat'),
 		gutil = require('gulp-util'),
@@ -22,13 +22,13 @@ gulp.task('js', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(changedInPlace({firstPass: true}))
 		.pipe(rigger())
 		.pipe(jshint())
 		// .pipe(jshint.reporter(stylish))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(flatten())
+		.pipe(cached('js'))
 		.pipe(gulp.dest(config.pathTo.Build.JS))
 		.pipe(reload({stream: true}));
 });

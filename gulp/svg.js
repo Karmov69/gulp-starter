@@ -2,7 +2,7 @@
 var gulp = require('gulp'),
     config = require('./config'),
     imagemin = require('gulp-imagemin'),
-    changedInPlace = require('gulp-changed-in-place'),
+    cached = require('gulp-cached'),
     gutil = require('gulp-util'),
     browserSync = require("browser-sync"),
     reload = browserSync.reload,
@@ -14,11 +14,11 @@ gulp.task('svg', function () {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
         }))
-        .pipe(changedInPlace({firstPass: true}))
         .pipe(imagemin({
             multipass: true,
             optimizationLevel: 7
         }))
+				.pipe(cached('svg'))
         .pipe(gulp.dest(config.pathTo.Build.Svg))
         .pipe(reload({stream: true}));
 });

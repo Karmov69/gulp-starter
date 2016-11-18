@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 		less = require('gulp-less'),
 		cssnano = require('gulp-cssnano'),
 		autoprefixer = require('gulp-autoprefixer'),
-		changedInPlace = require('gulp-changed-in-place'),
+		cached = require('gulp-cached'),
 		gutil = require('gulp-util'),
 		rename = require('gulp-rename'),
 		browserSync = require("browser-sync"),
@@ -17,11 +17,11 @@ gulp.task('less', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(changedInPlace({firstPass: true}))
 		.pipe(less())
 		.pipe(autoprefixer(config.autoprefixerBrowsers))
 		.pipe(cssnano({ minifyFontValues: false, discardUnused: false }))
 		.pipe(rename({ suffix: '.min' }))
+		.pipe(cached('less'))
 		.pipe(gulp.dest(config.pathTo.Build.Styles))
 		.pipe(reload({stream: true}));
 });

@@ -9,7 +9,6 @@
     "del": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
-    "gulp-changed-in-place": "^2.0.3",
     "gulp-cheerio": "latest",
     "gulp-concat": "latest",
     "gulp-cssnano": "latest",
@@ -43,7 +42,8 @@
     "jshint-stylish": "latest",
     "require-dir": "latest",
     "run-sequence": "latest",
-    "vinyl-buffer": "latest"
+    "vinyl-buffer": "latest",
+    "gulp-cached": "latest"
   },
   "scripts": {},
   "repository": {},

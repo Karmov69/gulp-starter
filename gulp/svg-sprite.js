@@ -2,7 +2,7 @@ var gulp = require('gulp'),
 		config = require('./config'),
 		svgstore = require('gulp-svgstore'),
 		svgmin = require('gulp-svgmin'),
-		changedInPlace = require('gulp-changed-in-place'),
+		cached = require('gulp-cached'),
 		gutil = require('gulp-util'),
 		browserSync = require("browser-sync"),
 		reload = browserSync.reload,
@@ -16,7 +16,6 @@ gulp.task('svg-sprite', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(changedInPlace({firstPass: true}))
 		.pipe(svgmin())
 		.pipe(svgstore())
 		.pipe(cheerio({
@@ -27,6 +26,7 @@ gulp.task('svg-sprite', function () {
 			parserOptions: { xmlMode: true }
 		}))
 		//.pipe(svgstore())
+		.pipe(cached('svg-sprite'))
 		.pipe(gulp.dest(config.pathTo.Build.SvgSprite))
 		.pipe(reload({stream: true}));
 });
