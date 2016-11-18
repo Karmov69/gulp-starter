@@ -58,7 +58,7 @@ module.exports = {
 	},
 
 	faviconSettings: {
-		appName: 'Kapous',
+		appName: 'projectname',
 		iconColor: '#000000',
 		bgColor: '#ffffff'
 	},
