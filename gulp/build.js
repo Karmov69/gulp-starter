@@ -15,6 +15,5 @@ gulp.task('build', function(callback) {
 		'txt',
 		'jade',
 		'favicon',
-		'gh-pages',
 		callback)
 });

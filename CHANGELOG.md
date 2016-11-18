@@ -1,6 +1,7 @@
 #1.0
 * Fix all bugs
 * Change gulp-newer plugin on gulp-changer
+* Delete `gh-pages` from `gulp build`
 
 # 0.5
 * Fix templates for create page
