@@ -16,7 +16,7 @@ gulp.task('svg-sprite', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(changedInPlace())
+		.pipe(changedInPlace({firstPass: true}))
 		.pipe(svgmin())
 		.pipe(svgstore())
 		.pipe(cheerio({

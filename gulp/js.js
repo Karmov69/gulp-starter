@@ -22,7 +22,7 @@ gulp.task('js', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(changedInPlace())
+		.pipe(changedInPlace({firstPass: true}))
 		.pipe(rigger())
 		.pipe(jshint())
 		// .pipe(jshint.reporter(stylish))

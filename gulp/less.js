@@ -17,7 +17,7 @@ gulp.task('less', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(changedInPlace())
+		.pipe(changedInPlace({firstPass: true}))
 		.pipe(less())
 		.pipe(autoprefixer(config.autoprefixerBrowsers))
 		.pipe(cssnano({ minifyFontValues: false, discardUnused: false }))

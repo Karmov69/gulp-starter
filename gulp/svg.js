@@ -14,7 +14,7 @@ gulp.task('svg', function () {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
         }))
-        .pipe(changedInPlace())
+        .pipe(changedInPlace({firstPass: true}))
         .pipe(imagemin({
             multipass: true,
             optimizationLevel: 7
