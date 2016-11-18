@@ -2,7 +2,7 @@
 var gulp = require('gulp'),
     config = require('./config'),
     imagemin = require('gulp-imagemin'),
-    newer = require('gulp-newer'),
+    changedInPlace = require('gulp-changed-in-place'),
     gutil = require('gulp-util'),
     browserSync = require("browser-sync"),
     reload = browserSync.reload,
@@ -14,7 +14,7 @@ gulp.task('svg', function () {
             gutil.log(gutil.colors.red(error.message));
             this.emit('end');
         }))
-        .pipe(newer(config.pathTo.Build.Svg))
+        .pipe(changedInPlace())
         .pipe(imagemin({
             multipass: true,
             optimizationLevel: 7

@@ -2,7 +2,7 @@ var gulp = require('gulp'),
 		config = require('./config'),
 		svgstore = require('gulp-svgstore'),
 		svgmin = require('gulp-svgmin'),
-		newer = require('gulp-newer'),
+		changedInPlace = require('gulp-changed-in-place'),
 		gutil = require('gulp-util'),
 		browserSync = require("browser-sync"),
 		reload = browserSync.reload,
@@ -16,7 +16,7 @@ gulp.task('svg-sprite', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(newer(config.pathTo.Build.SvgSprite))
+		.pipe(changedInPlace())
 		.pipe(svgmin())
 		.pipe(svgstore())
 		.pipe(cheerio({

@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 		imagemin = require('gulp-imagemin'),
 		pngquant = require('imagemin-pngquant'),
 		jpegoptim = require('imagemin-jpegoptim'),
-		newer = require('gulp-newer'),
+		changedInPlace = require('gulp-changed-in-place'),
 		gutil = require('gulp-util'),
 		browserSync = require("browser-sync"),
 		reload = browserSync.reload,
@@ -17,7 +17,7 @@ gulp.task('images', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		.pipe(newer(config.pathTo.Build.Images))
+		.pipe(changedInPlace())
 		.pipe(imagemin({
 			progressive: true,
 			optimizationLevel: 3,

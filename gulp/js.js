@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 		jshint = require('gulp-jshint'),
 		stylish = require('jshint-stylish'),
 		uglify = require('gulp-uglify'),
-		newer = require('gulp-newer'),
+		changedInPlace = require('gulp-changed-in-place'),
 		gulpFilter = require('gulp-filter'),
 		concat = require('gulp-concat'),
 		gutil = require('gulp-util'),
@@ -22,7 +22,7 @@ gulp.task('js', function () {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');
 		}))
-		// Get custom JS
+		.pipe(changedInPlace())
 		.pipe(rigger())
 		.pipe(jshint())
 		// .pipe(jshint.reporter(stylish))
