@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 		plumber = require('gulp-plumber');
 
 
-gulp.task('images', function () {
+gulp.task('img', function () {
 	return gulp.src(config.pathTo.Src.Images)
 		.pipe(plumber(function(error) {
 			gutil.log(gutil.colors.red(error.message));

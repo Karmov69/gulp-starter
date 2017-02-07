@@ -1,0 +1,15 @@
+.absolute-center-ver {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.absolute-center-hor {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.absolute-center {
+	.absolute-center-ver();
+	.absolute-center-hor();
+	transform: translate(-50%,-50%);
+}

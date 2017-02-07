@@ -16,7 +16,7 @@ gulp.task('png-sprite', function () {
 			.pipe(spritesmith({
 				padding: 1,
 				imgName: 'sprite.png', //имя спрайтового изображения
-				cssName: 'sprite-position.less', //имя стиля где храним позиции изображений в спрайте
+				cssName: '_sprite-position.less', //имя стиля где храним позиции изображений в спрайте
 				imgPath: '../img/sprite.png', //путь где лежит спрайт
 				cssFormat: 'less', //формат в котором обрабатываем позиции
 				cssTemplate: 'template.mustache', //файл маски

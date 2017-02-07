@@ -2,16 +2,15 @@ module.exports = {
 	// Path settings
 	pathTo: {
 		Src: {
-			Styles: 'src/less/[^_]*.{less,css}',
+			Styles: 'src/less/**/[^_]*.less',
 			Jade: 'src/jade/**/[^_]*.jade',
-			Images: ['src/img/**/*.*', '!src/img/sprite/*.*', '!src/img/favicon/*.*'],
+			Images: ['src/img/**/*.{jpg,jpeg,png,gif}', '!src/img/sprite/*.*', '!src/img/favicon/*.*', '!src/img/svg-sprite/*.*', '!src/img/svg/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
 			GHPages: 'dist/**/*',
 			JS: 'src/js/**/*.*',
-			Txt: ['src/humans.txt', 'src/robots.txt', 'src/.htaccess'],
 			Fonts: 'src/fonts/**/*',
-			Svg: ['src/svg/**/*.*', '!src/svg/sprite/*.*'],
-			SvgSprite: 'src/svg/sprite/**/*.svg',
+			Svg: 'src/img/svg/**/*.svg',
+			SvgSprite: 'src/img/svg-sprite/**/*.svg',
 			Favicon: 'src/img/favicon/favicon.png',
 			PagesList: 'src/jade/pages.jade'
 		},
@@ -21,24 +20,22 @@ module.exports = {
 			Jade: 'dist/*.html',
 			Images: 'dist/img',
 			PngSprite: 'dist/img',
-			PngSpriteCSS: 'src/less/blocks',
+			PngSpriteCSS: 'src/less/components',
 			JS: 'dist/js',
-			Txt: 'dist/',
-			Clean: ['dist/**/*', '!dist/.gitignore'],
+			Clean: 'dist/**/*',
 			Fonts: 'dist/fonts',
-			Svg: 'dist/svg',
-			SvgSprite: 'dist/img',
-			SvgSpriteNoSvg: 'dist/svg/sprite/svg-sprite.png',
+			Svg: 'dist/img/svg',
+			SvgSprite: 'dist/img/svg',
 			Favicon: 'dist/img/favicons/',
 			FaviconInject: 'dist/*.html'
 		},
 		Watch: {
-			Styles: 'src/less/**/*.{less,css}',
+			Styles: 'src/less/**/*.less',
 			Jade: 'src/jade/**/*.jade',
-			Images: ['src/img/**/*.*', '!src/img/sprite/*.*', '!src/img/favicon/*.*'],
+			Images: ['src/img/**/*.{jpg,jpeg,png,gif}', '!src/img/sprite/*.*', '!src/img/favicon/*.*', '!src/img/svg-sprite/*.*', '!src/img/svg/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
-			SvgSprite: 'src/svg/sprite/**/*.svg',
-			Txt: ['src/humans.txt', 'src/robots.txt', 'src/.htaccess'],
+			Svg: 'src/img/svg/**/*.svg',
+			SvgSprite: 'src/img/svg-sprite/**/*.svg',
 			JS: 'src/js/**/*.*',
 			Fonts: 'src/fonts/**/*',
 			Favicon: 'src/img/favicon/favicon.png'
@@ -57,8 +54,9 @@ module.exports = {
 		}
 	},
 
+	// Favicon settings
 	faviconSettings: {
-		appName: 'projectname',
+		appName: 'project',
 		iconColor: '#000000',
 		bgColor: '#ffffff'
 	},
@@ -80,7 +78,7 @@ module.exports = {
 		port: 9000,
 		injectChanges: true,
 		delay: 100,
-		logPrefix: 'projectname'
+		logPrefix: 'project'
 	},
 
 	// ftp config

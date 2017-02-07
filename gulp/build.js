@@ -5,15 +5,14 @@ var gulp = require('gulp'),
 gulp.task('build', function(callback) {
 	runSequence(
 		'clean',
-		'js',
-		'png-sprite',
-		'images',
-		'svg',
 		'svg-sprite',
+		['js',
+		'png-sprite',
+		'img',
+		'svg',
 		'fonts',
 		'less',
-		'txt',
-		'jade',
+		'jade'],
 		'favicon',
 		callback)
 });

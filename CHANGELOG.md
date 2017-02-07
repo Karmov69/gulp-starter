@@ -1,3 +1,13 @@
+#1.0.1 (07.02.2017)
+* Delete sourcemap plugin
+* Delete js-hint plugin
+* Delete text task
+* Config build sequence
+* Change SVG-sprite folder
+* Add Less mixins
+* Add normalize.css to Bower
+* Fix Less styles
+
 #1.0
 * Fix all bugs
 * Change gulp-newer plugin on gulp-changer

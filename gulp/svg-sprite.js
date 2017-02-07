@@ -25,7 +25,6 @@ gulp.task('svg-sprite', function () {
 			},
 			parserOptions: { xmlMode: true }
 		}))
-		//.pipe(svgstore())
 		.pipe(cached('svg-sprite'))
 		.pipe(gulp.dest(config.pathTo.Build.SvgSprite))
 		.pipe(reload({stream: true}));

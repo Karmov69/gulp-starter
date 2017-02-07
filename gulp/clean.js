@@ -5,5 +5,5 @@ var gulp = require('gulp'),
 
 
 gulp.task('clean', function () {
-	del(config.pathTo.Build.Clean);
+	return del(config.pathTo.Build.Clean);
 });

@@ -11,9 +11,9 @@
 3. Change project repo config `git remote set-url origin https://github.com/user/repo.git`
 4. Clear `TODO`
 5. Change `name` on `package.json`
-6. Clear, change or delete CHANGELOG.md
-7. Clear, change or delete `README.MD`
-8. Change `name` and `description` on `bower.json`
+6. Change `name` and `description` on `bower.json`
+7. Clear, change or delete `CHANGELOG.md`
+8. Clear, change or delete `README.MD`
 9. Settings `gulp/config.js`
 10. Settings `gulp/build.js`
 11. Install NPM dependencies `npm i`
