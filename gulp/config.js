@@ -42,14 +42,24 @@ module.exports = {
 		},
 		Templates: {
 			Page: {
-				Jade: 'src/templates/page.jade',
-				Less: 'src/templates/page.less',
-				Js: 'src/templates/page.js'
+				Jade: 'src/templates/page/template.jade',
+				Less: 'src/templates/page/template.less',
+				Js: 'src/templates/page/template.js'
+			},
+			Component: {
+				Jade: 'src/templates/component/template.jade',
+				Less: 'src/templates/component/template.less'
 			},
 			Dest: {
-				Jade: 'src/jade',
-				Less: 'src/less',
-				Js: 'src/js'
+				Page: {
+					Jade: 'src/jade',
+					Less: 'src/less',
+					Js: 'src/js'
+				},
+				Component: {
+					Jade: 'src/jade/components',
+					Less: 'src/less/components'
+				}
 			}
 		}
 	},

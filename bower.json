@@ -14,7 +14,11 @@
 		"bower_components"
 	],
 	"devDependencies": {
-		"bootstrap": "latest",
+		"flexboxgrid": "latest",
 		"normalize-css": "latest"
+	},
+	"//": {
+		"swiper": "latest",
+		"vanilla-modal": "latest"
 	}
 }
