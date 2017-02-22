@@ -1,3 +1,11 @@
+#1.1 (22.02.2017)
+* Remove jQuery
+* Remove Bootstrap
+* Add Flex grid plugin
+* Add component templates for console command create
+* Add vanilla JS plugins (modals, slider)
+* Add input with type `password` in `ui.less`
+
 #1.0.1 (07.02.2017)
 * Delete sourcemap plugin
 * Delete js-hint plugin
