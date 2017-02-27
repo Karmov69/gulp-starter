@@ -3,7 +3,7 @@ module.exports = {
 	pathTo: {
 		Src: {
 			Styles: 'src/less/**/[^_]*.less',
-			Jade: 'src/jade/**/[^_]*.jade',
+			Pug: 'src/pug/**/[^_]*.pug',
 			Images: ['src/img/**/*.{jpg,jpeg,png,gif}', '!src/img/sprite/*.*', '!src/img/favicon/*.*', '!src/img/svg-sprite/*.*', '!src/img/svg/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
 			GHPages: 'dist/**/*',
@@ -12,12 +12,12 @@ module.exports = {
 			Svg: 'src/img/svg/**/*.svg',
 			SvgSprite: 'src/img/svg-sprite/**/*.svg',
 			Favicon: 'src/img/favicon/favicon.png',
-			PagesList: 'src/jade/pages.jade'
+			PagesList: 'src/pug/pages.pug'
 		},
 		Build: {
 			Styles: 'dist/css',
 			Html: 'dist/',
-			Jade: 'dist/*.html',
+			Pug: 'dist/*.html',
 			Images: 'dist/img',
 			PngSprite: 'dist/img',
 			PngSpriteCSS: 'src/less/components',
@@ -31,7 +31,7 @@ module.exports = {
 		},
 		Watch: {
 			Styles: 'src/less/**/*.less',
-			Jade: 'src/jade/**/*.jade',
+			Pug: 'src/pug/**/*.pug',
 			Images: ['src/img/**/*.{jpg,jpeg,png,gif}', '!src/img/sprite/*.*', '!src/img/favicon/*.*', '!src/img/svg-sprite/*.*', '!src/img/svg/*.*'],
 			PngSprite: 'src/img/sprite/**/*.png',
 			Svg: 'src/img/svg/**/*.svg',
@@ -42,22 +42,22 @@ module.exports = {
 		},
 		Templates: {
 			Page: {
-				Jade: 'src/templates/page/template.jade',
+				Pug: 'src/templates/page/template.pug',
 				Less: 'src/templates/page/template.less',
 				Js: 'src/templates/page/template.js'
 			},
 			Component: {
-				Jade: 'src/templates/component/template.jade',
+				Pug: 'src/templates/component/template.pug',
 				Less: 'src/templates/component/template.less'
 			},
 			Dest: {
 				Page: {
-					Jade: 'src/jade',
+					Pug: 'src/pug',
 					Less: 'src/less',
 					Js: 'src/js'
 				},
 				Component: {
-					Jade: 'src/jade/components',
+					Pug: 'src/pug/components',
 					Less: 'src/less/components'
 				}
 			}

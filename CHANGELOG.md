@@ -1,3 +1,6 @@
+#1.2 (27.02.2017)
+* Jade to Pug
+
 #1.1 (22.02.2017)
 * Remove jQuery
 * Remove Bootstrap

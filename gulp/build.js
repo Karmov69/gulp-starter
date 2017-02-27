@@ -12,7 +12,7 @@ gulp.task('build', function(callback) {
 		'svg',
 		'fonts',
 		'less',
-		'jade'],
+		'pug'],
 		'favicon',
 		callback)
 });

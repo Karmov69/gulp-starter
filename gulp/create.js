@@ -14,10 +14,10 @@ var gulp = require('gulp'),
 // New Page
 gulp.task('new-page', function () {
 
-	gulp.src(config.pathTo.Templates.Page.Jade)
+	gulp.src(config.pathTo.Templates.Page.Pug)
 		.pipe(template({page: (gutil.env.page ? gutil.env.page : 'new-page'), title: (gutil.env.title ? gutil.env.title : 'Новая страница')}))
 		.pipe(rename({ basename: (gutil.env.page ? gutil.env.page : 'new-page') }))
-		.pipe(gulp.dest(config.pathTo.Templates.Dest.Page.Jade));
+		.pipe(gulp.dest(config.pathTo.Templates.Dest.Page.Pug));
 
 	gulp.src(config.pathTo.Templates.Page.Less)
 		.pipe(rename({ basename: (gutil.env.page ? gutil.env.page : 'new-page')+'-style' }))
@@ -29,19 +29,19 @@ gulp.task('new-page', function () {
 
 	gulp.src(config.pathTo.Src.PagesList)
 		.pipe(insert.append('\n\t\tli: a(href="'+(gutil.env.page ? gutil.env.page : 'new-page')+'.html" target="_blank") '+(gutil.env.title ? gutil.env.title : 'Новая страница') ))
-		.pipe(gulp.dest(config.pathTo.Templates.Dest.Page.Jade));
+		.pipe(gulp.dest(config.pathTo.Templates.Dest.Page.Pug));
 });
 
 // New Component
 gulp.task('new-component', function () {
 
-	gulp.src(config.pathTo.Templates.Component.Jade)
+	gulp.src(config.pathTo.Templates.Component.Pug)
 		.pipe(template({component: (gutil.env.component ? gutil.env.component : 'new-component')}))
 		.pipe(rename({
 			basename: (gutil.env.component ? gutil.env.component : 'new-component'),
 			prefix: '_'
 		}))
-		.pipe(gulp.dest(config.pathTo.Templates.Dest.Component.Jade));
+		.pipe(gulp.dest(config.pathTo.Templates.Dest.Component.Pug));
 
 	gulp.src(config.pathTo.Templates.Component.Less)
 		.pipe(template({component: (gutil.env.component ? gutil.env.component : 'new-component')}))

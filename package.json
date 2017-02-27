@@ -19,7 +19,7 @@
 		"gulp-gh-pages": "latest",
 		"gulp-imagemin": "latest",
 		"gulp-inject-string": "latest",
-		"gulp-jade": "latest",
+		"gulp-pug": "latest",
 		"gulp-jshint": "latest",
 		"gulp-less": "latest",
 		"gulp-load-plugins": "latest",
