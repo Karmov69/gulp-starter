@@ -5,9 +5,9 @@ block vars
 	- var title = "<%= title %>";
 
 block styles
-	link(rel="stylesheet", href="css/#{page}-style.min.css")
+	link(rel="stylesheet", href='css/'+page+'-style.min.css')
 
 block content
 
 block scripts
-	script(src='js/#{page}-script.min.js' defer)
+	script(src='js/'+page+'-script.min.js' defer)
