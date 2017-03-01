@@ -7,7 +7,13 @@ document.addEventListener('DOMContentLoaded', function(){
 	var app = {};
 	window.app = app;
 
-	app.mainInit = function(){};
+	app.mainInit = function(){
+		// Window size
+		app.widowWidth = window.innerWidth;
+		app.mobileWidth = 320;
+		app.tabletWidth = 750;
+		app.desktopWidth = 1200;
+	};
 
 	app.mainInit();
 

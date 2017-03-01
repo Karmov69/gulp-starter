@@ -14,7 +14,7 @@
 		"bower_components"
 	],
 	"devDependencies": {
-		"flexboxgrid": "latest",
+		"flexbox-grid-less": "latest",
 		"normalize-css": "latest"
 	},
 	"//": {

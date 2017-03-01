@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 		plumber = require('gulp-plumber');
 
 gulp.task('svg-sprite', function () {
-	gulp.src(config.pathTo.Src.SvgSprite)
+	return gulp.src(config.pathTo.Src.SvgSprite)
 		.pipe(plumber(function(error) {
 			gutil.log(gutil.colors.red(error.message));
 			this.emit('end');

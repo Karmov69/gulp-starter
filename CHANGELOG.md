@@ -1,3 +1,12 @@
+#1.2.1 (01.03.2017)
+* Change `flexbox` plugin
+* Delete `JShint` npm
+* Add return to `svg-sprite` task
+* Fix `img` task on `watch`
+* Fix variables on `pug`
+* Add window sizes on `app.js` for responsive
+* Change `path` to `svg sprite`
+
 #1.2 (27.02.2017)
 * Jade to Pug
 
